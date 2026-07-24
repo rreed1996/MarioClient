@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="lwjgl-awt">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/ext/lwjgl/lwjgl-awt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ext/lwjgl/lwjgl-fat.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ext/lwjgl/lwjgl-opengl-fat.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
