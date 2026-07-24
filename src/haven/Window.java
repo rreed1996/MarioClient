@@ -31,6 +31,7 @@ import java.util.function.*;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import static haven.PUtils.*;
+import haven.mario.theme.MarioTheme;
 
 public class Window extends Widget {
     public static final Pipe.Op bgblend = FragColor.blend.nil;
@@ -219,12 +220,18 @@ public class Window extends Widget {
 
 	protected void drawbg(GOut g) {
 	    g.usestate(bgblend);
+		// added
+		g.chcolor(MarioTheme.WINDOW_BACKGROUND);
+
 	    Coord bgc = new Coord();
 	    for(bgc.y = ca.ul.y; bgc.y < ca.br.y; bgc.y += bg.sz().y) {
 		for(bgc.x = ca.ul.x; bgc.x < ca.br.x; bgc.x += bg.sz().x)
 		    g.image(bg, bgc, ca.ul, ca.br);
 	    }
 	    g.defstate();
+		// added
+		g.chcolor();
+
 	    bgc.x = ca.ul.x;
 	    for(bgc.y = ca.ul.y; bgc.y < ca.br.y; bgc.y += bgl.sz().y)
 		g.image(bgl, bgc, ca.ul, ca.br);
@@ -234,6 +241,7 @@ public class Window extends Widget {
 	}
 
 	protected void drawframe(GOut g) {
+
 	    Window wnd = (Window)parent;
 	    if((cap == null) || (cap.text != wnd.cap) || (cfocus != wnd.hasfocus)) {
 		cap = (wnd.cap == null) ? null : ((cfocus = wnd.hasfocus) ? cf : ncf).render(wnd.cap);
@@ -255,6 +263,7 @@ public class Window extends Widget {
 	    g.image(cap.tex(), cpo);
 	    mdo = Coord.of(cl.sz().x + cmw + cr.sz().x, 0);
 	    cbr = Coord.of(sz.x - tr.sz().x, tm.sz().y);
+
 	    for(; mdo.x < cbr.x; mdo.x += tm.sz().x)
 		g.image(tm, mdo, Coord.z, cbr);
 	    g.image(tr, Coord.of(sz.x - tr.sz().x, 0));
@@ -279,6 +288,7 @@ public class Window extends Widget {
 	    for(; mdo.x < cbr.x; mdo.x += bm.sz().x)
 		g.image(bm, mdo, Coord.z, cbr);
 	    g.image(br, sz.sub(br.sz()));
+
 	}
 
 	public void draw(GOut g) {

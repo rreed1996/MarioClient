@@ -38,6 +38,7 @@ import java.awt.font.TextAttribute;
 import java.awt.font.TextHitInfo;
 import java.awt.image.BufferedImage;
 import java.text.AttributedCharacterIterator.Attribute;
+import haven.mario.theme.MarioTheme;
 
 public class ChatUI extends Widget {
     public static final RichText.Foundry fnd = new RichText.Foundry(new ChatParser(TextAttribute.FONT, Text.dfont.deriveFont(UI.scale(12f)), TextAttribute.FOREGROUND, Color.BLACK)).aa(true);
@@ -370,7 +371,7 @@ public class ChatUI extends Widget {
 	}
 
 	public void draw(GOut g) {
-	    g.chcolor(0, 0, 0, 128);
+		g.chcolor(0, 0, 0, 128);
 	    g.frect(Coord.z, sz);
 	    g.chcolor();
 	    int sy = (int)Math.round(dy), h = ih(), w = iw();
@@ -1460,7 +1461,9 @@ public class ChatUI extends Widget {
     private static final Tex bmf = Resource.loadtex("gfx/hud/chat-mid");
     private static final Tex bcbd = Resource.loadtex("gfx/hud/chat-close-g");
     public void draw(GOut g) {
-	g.rimage(Window.bg, marg, sz.sub(marg.x * 2, marg.y));
+		g.chcolor(MarioTheme.WINDOW_BACKGROUND);
+    	g.rimage(Window.bg, marg, sz.sub(marg.x * 2, marg.y));
+    	g.chcolor();
 	super.draw(g);
 	g.image(bulc, new Coord(0, 0));
 	g.image(burc, new Coord(sz.x - burc.sz().x, 0));
