@@ -26,6 +26,7 @@
 
 package haven;
 
+import haven.mario.resources.MarioResources;
 import haven.render.*;
 import java.util.function.*;
 import java.awt.Color;
@@ -45,7 +46,9 @@ public class Window extends Widget {
     public static final Tex cr = Resource.loadtex("gfx/hud/wnd/lg/cr");
     public static final Tex tm = Resource.loadtex("gfx/hud/wnd/lg/tm");
     public static final Tex tr = Resource.loadtex("gfx/hud/wnd/lg/tr");
-    public static final Tex lm = Resource.loadtex("gfx/hud/wnd/lg/lm");
+    //public static final Tex lm = Resource.loadtex("gfx/hud/wnd/lg/lm");
+	public static final Tex lm = MarioResources.loadThemeTEx("gfx/hud/wnd/lg/lm");
+
     public static final Tex lb = Resource.loadtex("gfx/hud/wnd/lg/lb");
     public static final Tex rm = Resource.loadtex("gfx/hud/wnd/lg/rm");
     public static final Tex bl = Resource.loadtex("gfx/hud/wnd/lg/bl");
