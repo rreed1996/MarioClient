@@ -410,3 +410,39 @@ PNG exists: true
 PNG loaded successfully.
 Custom PNG Size : 24 x 22
 Original Tex Size: 24 x 22
+Requested texture: gfx/hud/wnd/lg/cl
+PNG path: C:\Users\rober\IdeaProjects\MarioClient\themes\default\gfx\hud\wnd\lg\cl.png
+PNG exists: true
+PNG loaded successfully.
+Custom PNG Size : 109 x 92
+Original Tex Size: 109 x 92
+Requested texture: gfx/hud/wnd/lg/cm
+PNG path: C:\Users\rober\IdeaProjects\MarioClient\themes\default\gfx\hud\wnd\lg\cm.png
+PNG exists: true
+PNG loaded successfully.
+Custom PNG Size : 32 x 44
+Original Tex Size: 32 x 44
+Requested texture: gfx/hud/wnd/lg/cr
+PNG path: C:\Users\rober\IdeaProjects\MarioClient\themes\default\gfx\hud\wnd\lg\cr.png
+PNG exists: true
+PNG loaded successfully.
+Custom PNG Size : 32 x 44
+Original Tex Size: 32 x 44
+Requested texture: gfx/hud/wnd/lg/tm
+PNG path: C:\Users\rober\IdeaProjects\MarioClient\themes\default\gfx\hud\wnd\lg\tm.png
+PNG exists: true
+PNG loaded successfully.
+Custom PNG Size : 10 x 36
+Original Tex Size: 10 x 36
+Requested texture: gfx/hud/wnd/lg/tr
+PNG path: C:\Users\rober\IdeaProjects\MarioClient\themes\default\gfx\hud\wnd\lg\tr.png
+PNG exists: true
+PNG loaded successfully.
+Custom PNG Size : 35 x 70
+Original Tex Size: 35 x 70
+Requested texture: gfx/hud/wnd/lg/lm
+PNG path: C:\Users\rober\IdeaProjects\MarioClient\themes\default\gfx\hud\wnd\lg\lm.png
+PNG exists: true
+PNG loaded successfully.
+Custom PNG Size : 24 x 22
+Original Tex Size: 24 x 22
