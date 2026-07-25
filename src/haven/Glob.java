@@ -50,6 +50,7 @@ public class Glob {
     public double skyblend = 0.0;
     private final Map<String, CAttr> cattr = new HashMap<String, CAttr>();
     private Map<Indir<Resource>, Object> wmap = new HashMap<Indir<Resource>, Object>();
+	private final Object brightsync = new Object();
     
     public Glob(Session sess) {
 	this.sess = sess;
@@ -136,6 +137,7 @@ public class Glob {
 		lightang = olightang + a * Utils.cangle(tlightang - olightang);
 		lightelev = olightelev + a * Utils.cangle(tlightelev - olightelev);
 	    }
+		brighten();
 	}
     }
 
@@ -253,6 +255,7 @@ public class Glob {
 			lightang = tlightang;
 			lightelev = tlightelev;
 			lchange = -1;
+			brighten();
 		    }
 		}
 	    } else if(t == "sky") {
@@ -385,4 +388,20 @@ public class Glob {
 
 	public String toString() {return(String.format("#<globinfo @%fs>", globtime));}
     }
+	public Color blightamb = null, blightdif = null, blightspc = null;
+
+	public void brighten(){
+		synchronized(brightsync) {
+			float bright = 1.0f;
+			if(lightamb != null) {
+				blightamb = Utils.blendcol(lightamb, Color.WHITE, bright);
+			}
+			if(lightdif != null) {
+				blightdif = Utils.blendcol(lightdif, Color.WHITE, bright);
+			}
+			if(lightspc != null) {
+				blightspc = Utils.blendcol(lightspc, Color.WHITE, bright);
+			}
+		}
+	}
 }
