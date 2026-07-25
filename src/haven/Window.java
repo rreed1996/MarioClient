@@ -40,14 +40,21 @@ public class Window extends Widget {
 									BlendMode.Function.ADD, BlendMode.Factor.ONE, BlendMode.Factor.INV_SRC_ALPHA));
     public static final Tex bg = Resource.loadtex("gfx/hud/wnd/lg/bg");
     public static final Tex bgl = Resource.loadtex("gfx/hud/wnd/lg/bgl");
+	//public static final Tex bgl = MarioResources.loadThemeTex("gfx/hud/wnd/lg/bgl");
     public static final Tex bgr = Resource.loadtex("gfx/hud/wnd/lg/bgr");
-    public static final Tex cl = Resource.loadtex("gfx/hud/wnd/lg/cl");
-    public static final TexI cm = new TexI(Resource.loadsimg("gfx/hud/wnd/lg/cm"));
-    public static final Tex cr = Resource.loadtex("gfx/hud/wnd/lg/cr");
-    public static final Tex tm = Resource.loadtex("gfx/hud/wnd/lg/tm");
-    public static final Tex tr = Resource.loadtex("gfx/hud/wnd/lg/tr");
+    //public static final Tex cl = Resource.loadtex("gfx/hud/wnd/lg/cl");
+	public static final Tex cl = MarioResources.loadThemeTex("gfx/hud/wnd/lg/cl");
+    //public static final TexI cm = new TexI(Resource.loadsimg("gfx/hud/wnd/lg/cm"));
+	public static final TexI cm = (TexI) MarioResources.loadThemeTex("gfx/hud/wnd/lg/cm");
+    //public static final Tex cr = Resource.loadtex("gfx/hud/wnd/lg/cr");
+	public static final Tex cr = MarioResources.loadThemeTex("gfx/hud/wnd/lg/cr");
+    //public static final Tex tm = Resource.loadtex("gfx/hud/wnd/lg/tm");
+	public static final Tex tm = MarioResources.loadThemeTex("gfx/hud/wnd/lg/tm");
+    //public static final Tex tr = Resource.loadtex("gfx/hud/wnd/lg/tr");
+	public static final Tex tr = MarioResources.loadThemeTex("gfx/hud/wnd/lg/tr");
     //public static final Tex lm = Resource.loadtex("gfx/hud/wnd/lg/lm");
-	public static final Tex lm = MarioResources.loadThemeTEx("gfx/hud/wnd/lg/lm");
+	public static final Tex lm = MarioResources.loadThemeTex("gfx/hud/wnd/lg/lm");
+
 
     public static final Tex lb = Resource.loadtex("gfx/hud/wnd/lg/lb");
     public static final Tex rm = Resource.loadtex("gfx/hud/wnd/lg/rm");
