@@ -223,14 +223,16 @@
     <condition property="jogl-access">
       <javaversion atleast="24" />
     </condition>
-    <java jar="bin/hafen.jar" fork="true">
+    <java jar="bin/hafen.jar"
+          fork="true"
+          output="client.log"
+          error="client-error.log">
       <sysproperty key="sun.java2d.uiScale.enabled" value="false" />
       <sysproperty key="java.net.preferIPv6Addresses" value="system" />
       <jvmarg if:set="jogl-exports" value="--add-exports=java.base/java.lang=ALL-UNNAMED" />
       <jvmarg if:set="jogl-exports" value="--add-exports=java.desktop/sun.awt=ALL-UNNAMED" />
       <jvmarg if:set="jogl-exports" value="--add-exports=java.desktop/sun.java2d=ALL-UNNAMED" />
       <jvmarg if:set="jogl-access" value="--enable-native-access=ALL-UNNAMED" />
-      <!-- <sysproperty key="haven.renderer" value="lwjgl" /> -->
     </java>
   </target>
 

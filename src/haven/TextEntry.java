@@ -30,13 +30,13 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class TextEntry extends Widget implements ReadLine.Owner {
-    public static final Color defcol = new Color(255, 205, 109), dirtycol = new Color(255, 232, 209);
+    public static final Color defcol = new Color(255, 255, 255), dirtycol = new Color(255, 255, 255);
     public static final Color selcol = new Color(24, 80, 192);
     public static final Text.Foundry fnd = new Text.Foundry(Text.serif, 12).aa(true);
-    public static final Tex lcap = Resource.loadtex("gfx/hud/text/l");
-    public static final Tex rcap = Resource.loadtex("gfx/hud/text/r");
-    public static final Tex mext = Resource.loadtex("gfx/hud/text/m");
-    public static final Tex caret = Resource.loadtex("gfx/hud/text/caret");
+    public static final Tex lcap = Resource.loadtex("mario/hud/text/l");
+    public static final Tex rcap = Resource.loadtex("mario/hud/text/r");
+    public static final Tex mext = Resource.loadtex("mario/hud/text/m");
+    public static final Tex caret = Resource.loadtex("mario/hud/text/caret");
     public static final int toffx = lcap.sz().x;
     public static final Coord coff = UI.scale(new Coord(-2, 0));
     public static final int wmarg = lcap.sz().x + rcap.sz().x + UI.scale(1);

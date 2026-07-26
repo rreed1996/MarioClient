@@ -49,6 +49,7 @@ public class CharWnd extends Window {
     public static final Color tbuff = new Color(128, 128, 255);
     public static final Color every = new Color(255, 255, 255, 16), other = new Color(255, 255, 255, 32);
     public static final int width = UI.scale(255);
+	//was 260
     public static final int height = UI.scale(260);
     public BAttrWnd battr;
     public SAttrWnd sattr;
@@ -57,6 +58,7 @@ public class CharWnd extends Window {
     public WoundWnd wound;
     public QuestWnd quest;
     public final Tabs.Tab battrtab, sattrtab, skilltab, fighttab, woundtab, questtab;
+	public final Widget tbbattrtab, tbsattrtab, tbskilltab, tbfighttab, tbwoundtab, tbquesttab;
     public int exp, enc;
 
     public static class TabProxy extends AWidget {
@@ -337,6 +339,7 @@ public class CharWnd extends Window {
     }
 
     public CharWnd(Glob glob) {
+		//Was 290, changed to 600
 	super(UI.scale(new Coord(300, 290)), "Character Sheet");
 
 	Tabs tabs = new Tabs(new Coord(15, 10), UI.scale(506, 315), this);
@@ -360,6 +363,13 @@ public class CharWnd extends Window {
 
 		public void click() {
 		    tabs.showtab(tab);
+			tbbattrtab.c.y = tab.sz.y + UI.scale(10) + tbbattrtab.sz.y/2;
+			tbsattrtab.c.y = tbbattrtab.c.y;
+			tbskilltab.c.y = tbbattrtab.c.y;
+			tbfighttab.c.y = tbbattrtab.c.y;
+			tbwoundtab.c.y = tbbattrtab.c.y;
+			tbquesttab.c.y = tbbattrtab.c.y;
+			CharWnd.this.resize(CharWnd.this.contentsz().add(UI.scale(15, 10)));
 		}
 
 		protected void depress() {
@@ -372,17 +382,31 @@ public class CharWnd extends Window {
 	    }
 
 	    this.addhl(new Coord(tabs.c.x, tabs.c.y + tabs.sz.y + UI.scale(10)), tabs.sz.x,
-		new TB("battr", battrtab, "Base Attributes"),
-		new TB("sattr", sattrtab, "Abilities"),
-		new TB("skill", skilltab, "Lore & Skills"),
-		new TB("fgt",   fighttab, "Martial Arts & Combat Schools"),
-		new TB("wound", woundtab, "Health & Wounds"),
-		new TB("quest", questtab, "Quest Log")
+				tbbattrtab = new TB("battr", battrtab, "Base Attributes"),
+				tbsattrtab = new TB("sattr", sattrtab, "Abilities"),
+				tbskilltab = new TB("skill", skilltab, "Lore & Skills"),
+				tbfighttab = new TB("fgt",   fighttab, "Martial Arts & Combat Schools"),
+				tbwoundtab = new TB("wound", woundtab, "Health & Wounds"),
+				tbquesttab = new TB("quest", questtab, "Quest Log")
 	    );
 	}
 
 	resize(contentsz().add(UI.scale(15, 10)));
     }
+
+	@Override
+	public void show() {
+		super.show();
+		battrtab.resize(battrtab.contentsz());
+		sattrtab.resize(sattrtab.contentsz());
+		tbbattrtab.c.y = battr.sz.y + UI.scale(10) + tbbattrtab.sz.y/2;
+		tbsattrtab.c.y = tbbattrtab.c.y;
+		tbskilltab.c.y = tbbattrtab.c.y;
+		tbfighttab.c.y = tbbattrtab.c.y;
+		tbwoundtab.c.y = tbbattrtab.c.y;
+		tbquesttab.c.y = tbbattrtab.c.y;
+		CharWnd.this.resize(CharWnd.this.contentsz().add(UI.scale(15, 10)));
+	}
 
     public void addchild(Widget child, Object... args) {
 	String place = (args[0] instanceof String) ? (((String)args[0]).intern()) : null;

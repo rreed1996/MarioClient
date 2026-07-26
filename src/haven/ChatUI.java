@@ -1136,6 +1136,7 @@ public class ChatUI extends Widget {
     
     private static final Tex chandiv = Resource.loadtex("gfx/hud/chat-cdiv");
     private static final Tex chanseld = Resource.loadtex("gfx/hud/chat-csel");
+	//private static final Tex chanseld = Resource.loadtex("mario/hud/chat/csel");
     private class Selector extends Widget {
 	public final BufferedImage ctex = Resource.loadimg("gfx/hud/chantex");
 	public final Text.Foundry tf = new Text.Foundry(Text.serif.deriveFont(Font.BOLD, UI.scale(12))).aa(true);
@@ -1453,12 +1454,12 @@ public class ChatUI extends Widget {
 	}
     }
 
-    private static final Tex bulc = Resource.loadtex("gfx/hud/chat-lc");
-    private static final Tex burc = Resource.loadtex("gfx/hud/chat-rc");
-    private static final Tex bhb = Resource.loadtex("gfx/hud/chat-hori");
-    private static final Tex bvlb = Resource.loadtex("gfx/hud/chat-verti");
+    private static final Tex bulc = Resource.loadtex("mario/hud/chat/lc");
+    private static final Tex burc = Resource.loadtex("mario/hud/chat/rc");
+    private static final Tex bhb = Resource.loadtex("mario/hud/chat/hori");
+    private static final Tex bvlb = Resource.loadtex("mario/hud/chat/vert");
     private static final Tex bvrb = bvlb;
-    private static final Tex bmf = Resource.loadtex("gfx/hud/chat-mid");
+    private static final Tex bmf = Resource.loadtex("mario/hud/chat/hori");
     private static final Tex bcbd = Resource.loadtex("gfx/hud/chat-close-g");
     public void draw(GOut g) {
 		g.chcolor(MarioTheme.WINDOW_BACKGROUND);
